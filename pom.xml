@@ -213,7 +213,7 @@
 						<extensions>true</extensions>
 						<configuration>
 							<nexusUrl>https://oss.sonatype.org</nexusUrl>
-							<serverId>oss-sonatype-release</serverId>
+							<serverId>ossrh</serverId>
 							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
 					</plugin>
