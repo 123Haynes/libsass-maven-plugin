@@ -19,14 +19,14 @@
 
 	<distributionManagement>
 		<repository>
-			<id>oss-sonatype-release</id>
+			<id>ossrh</id>
 			<name>oss-sonatype-release</name>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 			<uniqueVersion>false</uniqueVersion>
 			<layout>default</layout>
 		</repository>
 		<snapshotRepository>
-			<id>oss-sonatype-snapshots</id>
+			<id>ossrh</id>
 			<name>oss-sonatype-snapshots</name>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 			<uniqueVersion>false</uniqueVersion>
@@ -87,11 +87,11 @@
 			<artifactId>plexus-build-api</artifactId>
 			<version>0.0.7</version>
 		</dependency>
-			        <dependency>
-			            <groupId>org.junit.jupiter</groupId>
-			            <artifactId>junit-jupiter-engine</artifactId>
-			            <version>5.5.1</version>
-			        </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.5.1</version>
+		</dependency>
 		<!--Required only to test ClasspathAwareImporter-->
 		<dependency>
 			<groupId>org.webjars</groupId>

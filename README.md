@@ -1,4 +1,4 @@
-Libsass Maven Plugin [![Build Status](https://travis-ci.org/warmuuh/libsass-maven-plugin.svg?branch=master)](https://travis-ci.org/warmuuh/libsass-maven-plugin) [![Maven Central](https://img.shields.io/maven-central/v/com.github.warmuuh/libsass-maven-plugin.svg)](https://mvnrepository.com/artifact/com.github.warmuuh/libsass-maven-plugin)
+Libsass Maven Plugin [![pipeline status](https://gitlab.com/haynes/libsass-maven-plugin/badges/master/pipeline.svg)](https://gitlab.com/haynes/libsass-maven-plugin/commits/master) [![Maven Central](https://img.shields.io/maven-central/v/com.gitlab.haynes/libsass-maven-plugin.svg)](https://mvnrepository.com/artifact/com.gitlab.haynes/libsass-maven-plugin)
 ==========
 
 Libsass Maven Plugin uses [libsass](http://github.com/hcatlin/libsass) to compile sass files.
@@ -43,7 +43,7 @@ Changelog:
 
 Installation
 -----
-libsass-maven-plugin is available on central-repository since version 0.1.2
+libsass-maven-plugin is available on central-repository since version 0.2.11
 
 Usage
 -----
@@ -53,9 +53,9 @@ Configure plugin in your pom.xml:
 <build>
    <plugins>
       <plugin>
-         <groupId>com.github.warmuuh</groupId>
+         <groupId>com.gitlab.haynes</groupId>
          <artifactId>libsass-maven-plugin</artifactId>
-         <version><VERSION>-libsass_3.4.4</version>
+         <version><VERSION>-libsass_3.6.1</version>
          <executions>
             <execution>
                <phase>generate-resources</phase>
@@ -76,7 +76,7 @@ Configure plugin in your pom.xml:
 
 Alternatively, you can use the `watch` goal to have the plugin watch your files and recompile on change:
 ```
-mvn com.github.warmuuh:libsass-maven-plugin:<version>-libsass_3.4.4:watch
+mvn com.gitlab.haynes:libsass-maven-plugin:<version>-libsass_3.6.1:watch
 ```
 
 Configuration Elements
