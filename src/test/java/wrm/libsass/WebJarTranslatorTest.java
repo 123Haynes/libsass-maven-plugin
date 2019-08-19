@@ -1,10 +1,12 @@
 package wrm.libsass;
 
-import org.junit.Assert;
-import org.junit.Test;
+
 
 import java.net.URI;
 import java.util.Optional;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class WebJarTranslatorTest {
 	@Test
@@ -15,6 +17,6 @@ public class WebJarTranslatorTest {
 		Optional<URI> fullUri = translator.translate(importUri);
 		Optional<URI> expectedUri = Optional.of(URI.create("META-INF/resources/webjars/susy/2.1.1/sass/susy/_math.scss"));
 
-		Assert.assertEquals(expectedUri, fullUri);
+		Assertions.assertEquals(expectedUri, fullUri);
 	}
 }

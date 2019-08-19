@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+import org.webjars.WebJarAssetLocator;
+
 import static wrm.libsass.Lookups.*;
 
 class ClasspathAwareImporter implements Importer {
@@ -16,7 +18,7 @@ class ClasspathAwareImporter implements Importer {
 	private static final String CSS_EXT = ".css";
 
 	private final WebJarTranslator webJarTranslator = new WebJarTranslator();
-
+	
 	@Override
 	public Collection<Import> apply(String importStr, Import previous) {
 		URI base = previous.getAbsoluteUri();

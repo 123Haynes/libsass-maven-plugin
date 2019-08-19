@@ -2,11 +2,17 @@ package test;
 
 import io.bit3.jsass.Output;
 import io.bit3.jsass.OutputStyle;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import wrm.libsass.SassCompiler;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 
 /**
  * Tests for {@link SassCompiler}.
@@ -18,7 +24,7 @@ public class SassCompilerTest {
 	private SassCompiler compiler;
 	private Output out;
 
-	@Before
+	@BeforeEach
 	public void initCompiler(){
 		compiler = new SassCompiler();
 		compiler.setPrecision(5);
@@ -143,7 +149,7 @@ public class SassCompilerTest {
 	private void assertCssContains(String expected){
 		String css = out.getCss();
 		String formatted = replaceNewLines(expected);
-		assertTrue("Generated CSS does not contain: " + formatted + "\nbut got: " + css, css.contains(formatted));
+		assertTrue(css.contains(formatted), "Generated CSS does not contain: " + formatted + "\nbut got: " + css);
 	}
 
 	private String replaceNewLines(String expected) {
@@ -153,18 +159,18 @@ public class SassCompilerTest {
 	private void assertCssDoesNotContain(String unwanted){
 		String css = out.getCss();
 		String formatted = replaceNewLines(unwanted);
-		assertFalse("Generated CSS contains: " + formatted + "\n" + css, css.contains(formatted));
+		assertFalse(css.contains(formatted), "Generated CSS contains: " + formatted + "\n" + css);
 	}
 
 	private void assertMapContains(String expected){
 		String sourceMap = out.getSourceMap();
 		String formatted = replaceNewLines(expected);
-		assertTrue("Generated SourceMap does not contain: " + formatted + "\n" + sourceMap, sourceMap.contains(formatted));
+		assertTrue(sourceMap.contains(formatted), "Generated SourceMap does not contain: " + formatted + "\n" + sourceMap);
 	}
 
 	private void assertMapDoesNotContain(String unwanted){
 		String sourceMap = out.getSourceMap();
 		String formatted = replaceNewLines(unwanted);
-		assertFalse("Generated SourceMap contains: " + formatted + "\n" + sourceMap, sourceMap.contains(formatted));
+		assertFalse(sourceMap.contains(formatted), "Generated SourceMap contains: " + formatted + "\n" + sourceMap);
 	}
 }
