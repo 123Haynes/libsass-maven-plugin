@@ -1,38 +1,36 @@
 package wrm.libsass;
 
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.webjars.WebJarAssetLocator;
 
-import java.net.URI;
-import java.util.Map;
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static java.util.stream.Collectors.toMap;
-
 class WebJarTranslator {
-	private static final Pattern WEBJAR_PATTERN = Pattern.compile(WebJarAssetLocator.WEBJARS_PATH_PREFIX + "/([^/]+)/([^/]+)/(.*)");
-
-	private final Map<String, String> index;
-
-	WebJarTranslator() {
-		index = WebJarAssetLocator.getFullPathIndex(Pattern.compile(".*"),
-				Thread.currentThread().getContextClassLoader())
-				.values()
-				.stream()
-				.map(WEBJAR_PATTERN::matcher)
-				.filter(Matcher::matches)
-				.collect(toMap(WebJarTranslator::convertMatchedPath, m -> m.group(0)));
-	}
-
-	private static String convertMatchedPath(Matcher matcher) {
-		String name = matcher.group(1);
-		String path = matcher.group(3);
-		return name + "/" + path;
-	}
 
 	Optional<URI> translate(URI uri) {
-		String fullPath = index.get(uri.toString());
+
+
+		ArrayList<String> nameAndPartialpathArrayList = new ArrayList<>(Arrays.asList(uri.toString().split("/")));
+		
+		String partialPath = "";
+		String name = "";
+		String fullPath = null;
+		
+		if (!nameAndPartialpathArrayList.isEmpty()) {
+			name = nameAndPartialpathArrayList.get(0);
+			
+			//remove the name from the array list
+			nameAndPartialpathArrayList.remove(0);
+			partialPath = nameAndPartialpathArrayList.stream()
+				      .map(n -> String.valueOf(n))
+				      .collect(Collectors.joining("/"));
+			WebJarAssetLocator webJarAssetLocator = new WebJarAssetLocator();
+			fullPath = webJarAssetLocator.getFullPathExact(name, partialPath);
+		}
+		
 		return fullPath == null ? Optional.empty() : Optional.of(URI.create(fullPath));
 	}
 }
