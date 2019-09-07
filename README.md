@@ -5,6 +5,10 @@ Libsass Maven Plugin uses [libsass](http://github.com/hcatlin/libsass) to compil
 Uses [jsass](https://github.com/bit3/jsass) to interface with C-library.
 
 Changelog:
+* 0.2.12
+  * update dependency org.webjars:webjars-locator-core to v0.40
+  * update dependency org.apache.maven:maven-core to v3.6.2 
+  * update dependency org.apache.maven:maven-plugin-api to v3.6.2
 * 0.2.11 - upgraded libsass to 3.6.1
   * migrated all tests to junit 5
   * set java 11 as new build baseline
