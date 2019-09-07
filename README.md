@@ -2,7 +2,9 @@ Libsass Maven Plugin [![pipeline status](https://gitlab.com/haynes/libsass-maven
 ==========
 
 Libsass Maven Plugin uses [libsass](http://github.com/hcatlin/libsass) to compile sass files.
-Uses [jsass](https://github.com/bit3/jsass) to interface with C-library.
+Uses [jsass](https://gitlab.com/jsass/jsass) to interface with C-library.
+
+## This project was forked from https://github.com/warmuuh/libsass-maven-plugin version 0.2.10-libsass_3.5.3
 
 Changelog:
 * 0.2.12
@@ -13,8 +15,8 @@ Changelog:
   * migrated all tests to junit 5
   * set java 11 as new build baseline
   * several dependency and plugin updates
-  * forked project
   * added gitlab-ci builds
+  * **forked project from https://github.com/warmuuh/libsass-maven-plugin**
 * 0.2.10 - upgraded libsass to 3.5.3
 * 0.2.9 - upgraded libsass to 3.4.7
   * refreshed output files for eclipse
@@ -59,7 +61,7 @@ Configure plugin in your pom.xml:
       <plugin>
          <groupId>com.gitlab.haynes</groupId>
          <artifactId>libsass-maven-plugin</artifactId>
-         <version><VERSION>-libsass_3.6.1</version>
+         <version>0.2.12</version>
          <executions>
             <execution>
                <phase>generate-resources</phase>
@@ -80,7 +82,7 @@ Configure plugin in your pom.xml:
 
 Alternatively, you can use the `watch` goal to have the plugin watch your files and recompile on change:
 ```
-mvn com.gitlab.haynes:libsass-maven-plugin:<version>-libsass_3.6.1:watch
+mvn com.gitlab.haynes:libsass-maven-plugin:0.2.12:watch
 ```
 
 Configuration Elements
