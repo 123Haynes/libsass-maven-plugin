@@ -26,16 +26,16 @@ cache:
 # Build and Test using JDK11
 test:jdk11:
   <<: *build
-  image: maven:3.6.1-jdk-11
+  image: maven:3.6.2-jdk-11
   
 # Build and Test using JDK13
 test:jdk13:
   <<: *build
-  image: maven:3.6.1-jdk-13
+  image: maven:3.6.2-jdk-13
 
 deploy:snapshot:
   stage: deploy
-  image: maven:3.6.1-jdk-11
+  image: maven:3.6.2-jdk-11
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
@@ -46,7 +46,7 @@ deploy:snapshot:
 
 deploy:release:
   stage: deploy
-  image: maven:3.6.1-jdk-11
+  image: maven:3.6.2-jdk-11
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
