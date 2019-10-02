@@ -94,7 +94,7 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>
-			<version>0.40</version>
+			<version>0.41</version>
 		</dependency>
 		<dependency>
 			<groupId>org.sonatype.plexus</groupId>
