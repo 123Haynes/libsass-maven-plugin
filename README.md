@@ -7,6 +7,8 @@ Uses [jsass](https://gitlab.com/jsass/jsass) to interface with C-library.
 ## This project was forked from https://github.com/warmuuh/libsass-maven-plugin version 0.2.10-libsass_3.5.3
 
 Changelog:
+* 0.2.14
+  * Update dependency io.bit3:jsass to v5.10.0
 * 0.2.13
   * update dependency org.junit.jupiter:junit-jupiter-engine to v5.5.2
   * update maven docker tag to v3.6.2
@@ -67,7 +69,7 @@ Configure plugin in your pom.xml:
       <plugin>
          <groupId>com.gitlab.haynes</groupId>
          <artifactId>libsass-maven-plugin</artifactId>
-         <version>0.2.13</version>
+         <version>0.2.14</version>
          <executions>
             <execution>
                <phase>generate-resources</phase>
@@ -88,7 +90,7 @@ Configure plugin in your pom.xml:
 
 Alternatively, you can use the `watch` goal to have the plugin watch your files and recompile on change:
 ```
-mvn com.gitlab.haynes:libsass-maven-plugin:0.2.13:watch
+mvn com.gitlab.haynes:libsass-maven-plugin:0.2.14:watch
 ```
 
 Configuration Elements
