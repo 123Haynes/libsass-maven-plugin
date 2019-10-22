@@ -12,6 +12,9 @@ cache:
   paths:
     - .m2/repository
 
+include:
+  template: Dependency-Scanning.gitlab-ci.yml
+
 .build: &build
   stage: test
   script:
