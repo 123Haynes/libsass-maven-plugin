@@ -6,6 +6,8 @@ variables:
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+  LM_JAVA_VERSION: 11
+  SAST_JAVA_VERSION: 11
 
 # Cache downloaded dependencies and plugins between builds.
 cache:
@@ -13,7 +15,8 @@ cache:
     - .m2/repository
 
 include:
-  template: Dependency-Scanning.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: License-Management.gitlab-ci.yml
 
 .build: &build
   stage: test
