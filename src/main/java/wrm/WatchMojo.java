@@ -16,97 +16,98 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.nio.file.attribute.BasicFileAttributes;
-
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 
 /**
- * Watch for changes in inputPath, then compile scss files to outputPath using
- * includePaths
+ * Watch for changes in inputPath, then compile scss files to outputPath using includePaths.
  *
  * @goal watch
  */
 public class WatchMojo extends AbstractSassMojo {
 
-	public void execute() throws MojoExecutionException, MojoFailureException {
-		validateConfig();
-		compiler = initCompiler();
+  /**
+   * Watch for changes in inputPath, then compile scss files to outputPath using includePaths.
+   */
+  public void execute() throws MojoExecutionException, MojoFailureException {
+    validateConfig();
+    compiler = initCompiler();
 
-		inputPath = inputPath.replaceAll("\\\\", "/");
+    inputPath = inputPath.replaceAll("\\\\", "/");
 
-		getLog().debug("Input Path=" + inputPath);
-		getLog().debug("Output Path=" + outputPath);
+    getLog().debug("Input Path=" + inputPath);
+    getLog().debug("Output Path=" + outputPath);
 
-		try (WatchService watcher = FileSystems.getDefault().newWatchService()) {
-			registerWatchDirectories(watcher);
-			
-			
-			getLog().info("Watching [" + inputPath + "]...");
-			try {
-				long lastModified = 0;
-				for (;;) {
-					WatchKey key = watcher.take();
-					for (WatchEvent<?> event : key.pollEvents()) {
-						if (event.kind() == OVERFLOW) {
-							continue;
-						}
-						Path modifiedFile = ((Path) key.watchable()).resolve((Path) event.context());
-						if (modifiedFile.toFile().lastModified() - lastModified > 1000) {
-							// Ignore multiple occurrences that are too close
-							// Usually caused by editors (where content is changed
-							// and then file attributes are changed)
-							getLog().debug(String.format(
-									"%s: %s", event.kind().name(), modifiedFile));
-							try {
-								compile();
-							} catch (Exception e) {
-								// ignore
-							}
-						}
-						lastModified = modifiedFile.toFile().lastModified();
-						break;
-					}
-					if (!key.reset()) {
-						break;
-					}
-				}
-			} catch (InterruptedException e) {
-				getLog().warn("Watch service interrupted");
-			}
-		} catch (IOException e) {
-			throw new MojoExecutionException("Exception while watching: "+ExceptionUtils.getRootCauseMessage(e), e);
-		}
-	}
+    try (WatchService watcher = FileSystems.getDefault().newWatchService()) {
+      registerWatchDirectories(watcher);
 
-	/**
-	 * registers inputPath and includePaths in watcher
-	 */
-	private void registerWatchDirectories(WatchService watcher) throws IOException {
-		Path root = project.getBasedir().toPath().resolve(Paths.get(inputPath));
-		registerAll(root, watcher);
-		
-		if (this.includePath != null) {
-			for(String inclPath : includePath.split(";")) {
-				Path incl = project.getBasedir().toPath().resolve(Paths.get(inclPath));
-				registerAll(incl, watcher);
-			}
-		}
-	}
+      getLog().info("Watching [" + inputPath + "]...");
+      try {
+        long lastModified = 0;
+        for (; ; ) {
+          WatchKey key = watcher.take();
+          for (WatchEvent<?> event : key.pollEvents()) {
+            if (event.kind() == OVERFLOW) {
+              continue;
+            }
+            Path modifiedFile = ((Path) key.watchable()).resolve((Path) event.context());
+            if (modifiedFile.toFile().lastModified() - lastModified > 1000) {
+              // Ignore multiple occurrences that are too close
+              // Usually caused by editors (where content is changed
+              // and then file attributes are changed)
+              getLog().debug(String.format(
+                  "%s: %s", event.kind().name(), modifiedFile));
+              try {
+                compile();
+              } catch (Exception e) {
+                // ignore
+              }
+            }
+            lastModified = modifiedFile.toFile().lastModified();
+            break;
+          }
+          if (!key.reset()) {
+            break;
+          }
+        }
+      } catch (InterruptedException e) {
+        getLog().warn("Watch service interrupted");
+      }
+    } catch (IOException e) {
+      throw new MojoExecutionException(
+          "Exception while watching: " + ExceptionUtils.getRootCauseMessage(e), e);
+    }
+  }
 
-	/**
-	 * Register the given directory, and all its sub-directories, with the
-	 * WatchService.
-	 */
-	private void registerAll(Path start, WatchService watcher) throws IOException {
-		// register directory and sub-directories
-		Files.walkFileTree(start, new SimpleFileVisitor<Path>() {
-			@Override
-			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-				dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
-				return FileVisitResult.CONTINUE;
-			}
-		});
-	}
+  /**
+   * registers inputPath and includePaths in watcher.
+   */
+  private void registerWatchDirectories(WatchService watcher) throws IOException {
+    Path root = project.getBasedir().toPath().resolve(Paths.get(inputPath));
+    registerAll(root, watcher);
+
+    if (this.includePath != null) {
+      for (String inclPath : includePath.split(";")) {
+        Path incl = project.getBasedir().toPath().resolve(Paths.get(inclPath));
+        registerAll(incl, watcher);
+      }
+    }
+  }
+
+  /**
+   * Register the given directory, and all its sub-directories, with the WatchService.
+   */
+  private void registerAll(Path start, WatchService watcher) throws IOException {
+    // register directory and sub-directories
+    Files.walkFileTree(start, new SimpleFileVisitor<Path>() {
+      @Override
+      public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+          throws IOException {
+        dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
+        return FileVisitResult.CONTINUE;
+      }
+    });
+  }
 
 }
