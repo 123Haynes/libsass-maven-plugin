@@ -1,5 +1,12 @@
 # Changelog
 
+* 0.2.17
+  * renamed property `omitSourceMapingURL` to `omitSourceMapingUrl`
+  * renamed property `embedSourceMapInCSS` to `embedSourceMapInCss`
+  * enforce the google_checks checkstyle rules
+  * update dependency org.slf4j:slf4j-api to v1.7.29
+  * update dependency org.slf4j:slf4j-simple to v1.7.29
+  * update dependency org.webjars:webjars-locator-core to v0.42
 * 0.2.16
   * Update dependency io.bit3:jsass to v5.10.2
   * Update dependency org.jacoco:jacoco-maven-plugin to v0.8.5

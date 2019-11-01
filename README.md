@@ -20,7 +20,7 @@ Configure plugin in your pom.xml:
       <plugin>
          <groupId>com.gitlab.haynes</groupId>
          <artifactId>libsass-maven-plugin</artifactId>
-         <version>0.2.16</version>
+         <version>0.2.17</version>
          <executions>
             <execution>
                <phase>generate-resources</phase>
@@ -41,7 +41,7 @@ Configure plugin in your pom.xml:
 
 Alternatively, you can use the `watch` goal to have the plugin watch your files and recompile on change:
 ```
-mvn com.gitlab.haynes:libsass-maven-plugin:0.2.16:watch
+mvn com.gitlab.haynes:libsass-maven-plugin:0.2.17:watch
 ```
 
 Configuration Elements
@@ -108,19 +108,19 @@ Configuration Elements
       </td>
     </tr>
     <tr>
-      <td>omitSourceMapingURL</td>
+      <td>omitSourceMapingUrl</td>
       <td><code>false</code></td>
       <td>
-        Prevents the generation of the <code>sourceMappingURL</code> special comment as the last
+        Prevents the generation of the <code>sourceMappingUrl</code> special comment as the last
         line of the compiled CSS.
       </td>
     </tr>
     <tr>
-      <td>embedSourceMapInCSS</td>
+      <td>embedSourceMapInCss</td>
       <td><code>false</code></td>
       <td>
         Embeds the whole source map data directly into the compiled CSS file by transforming
-        <code>sourceMappingURL</code> into a data URI.
+        <code>sourceMappingUrl</code> into a data URI.
       </td>
     </tr>
     <tr>
