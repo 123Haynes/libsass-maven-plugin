@@ -1,5 +1,9 @@
 # Changelog
 
+* 0.2.18
+  * update dependency com.puppycrawl.tools:checkstyle to v8.26
+  * update dependency org.apache.maven.plugins:maven-source-plugin to v3.2.0
+  * update dependency io.bit3:jsass to v5.10.3
 * 0.2.17
   * renamed property `omitSourceMapingURL` to `omitSourceMapingUrl`
   * renamed property `embedSourceMapInCSS` to `embedSourceMapInCss`
