@@ -1,5 +1,7 @@
 # Changelog
 
+* 0.2.19
+  * update dependency org.webjars:webjars-locator-core to v0.43
 * 0.2.18
   * update dependency com.puppycrawl.tools:checkstyle to v8.26
   * update dependency org.apache.maven.plugins:maven-source-plugin to v3.2.0

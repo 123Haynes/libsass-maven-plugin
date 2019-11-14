@@ -20,7 +20,7 @@ Configure plugin in your pom.xml:
       <plugin>
          <groupId>com.gitlab.haynes</groupId>
          <artifactId>libsass-maven-plugin</artifactId>
-         <version>0.2.18</version>
+         <version>0.2.19</version>
          <executions>
             <execution>
                <phase>generate-resources</phase>
@@ -41,7 +41,7 @@ Configure plugin in your pom.xml:
 
 Alternatively, you can use the `watch` goal to have the plugin watch your files and recompile on change:
 ```
-mvn com.gitlab.haynes:libsass-maven-plugin:0.2.18:watch
+mvn com.gitlab.haynes:libsass-maven-plugin:0.2.19:watch
 ```
 
 Configuration Elements
