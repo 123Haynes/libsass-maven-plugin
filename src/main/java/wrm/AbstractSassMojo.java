@@ -141,8 +141,18 @@ public abstract class AbstractSassMojo extends AbstractMojo {
    */
   private boolean copySourceToOutput;
 
+  /**
+   * The maven project.
+   * @parameter property="project"
+   * @required
+   * @readonly
+   */
   protected MavenProject project;
 
+  /**
+   * The build context.
+   * @component
+   */
   protected BuildContext buildContext;
 
   protected SassCompiler compiler;
