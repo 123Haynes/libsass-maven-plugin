@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gitlab.haynes</groupId>
   <artifactId>libsass-maven-plugin</artifactId>
-  <version>0.2.21-SNAPSHOT</version>
+  <version>0.2.22-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
 
@@ -116,8 +116,8 @@
   </dependencies>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -270,13 +270,13 @@
                 <goals>
                   <goal>sign</goal>
                 </goals>
-                                <configuration>
-                                  <executable>/usr/bin/gpg</executable>
-                                  <gpgArguments>
-                                    <gpgArgument>--pinentry-mode</gpgArgument>
-                                    <gpgArgument>loopback</gpgArgument>
-                                  </gpgArguments>
-                                </configuration>
+                <configuration>
+                  <executable>/usr/bin/gpg</executable>
+                  <gpgArguments>
+                    <gpgArgument>--pinentry-mode</gpgArgument>
+                    <gpgArgument>loopback</gpgArgument>
+                  </gpgArguments>
+                </configuration>
               </execution>
             </executions>
           </plugin>
