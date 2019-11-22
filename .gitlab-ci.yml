@@ -18,7 +18,7 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: License-Management.gitlab-ci.yml
 
-.build: &build
+.build:
   stage: test
   script:
     - 'mvn $MAVEN_CLI_OPTS clean org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report'
@@ -29,19 +29,24 @@ include:
       junit:
         - $CI_PROJECT_DIR/target/surefire-reports/TEST-*.xml
 
+# Build and Test using JDK8
+test:jdk8:
+  extends: .build
+  image: maven:3.6.2-jdk-8
+
 # Build and Test using JDK11
 test:jdk11:
-  <<: *build
+  extends: .build
   image: maven:3.6.2-jdk-11
   
 # Build and Test using JDK13
 test:jdk13:
-  <<: *build
+  extends: .build
   image: maven:3.6.2-jdk-13
 
 deploy:snapshot:
   stage: deploy
-  image: maven:3.6.2-jdk-11
+  image: maven:3.6.2-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
@@ -52,7 +57,7 @@ deploy:snapshot:
 
 deploy:release:
   stage: deploy
-  image: maven:3.6.2-jdk-11
+  image: maven:3.6.2-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'

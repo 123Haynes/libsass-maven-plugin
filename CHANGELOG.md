@@ -1,5 +1,7 @@
 # Changelog
 
+* 0.2.21
+  * lower the target java version to java 8 and add the corresponding ci jobs.
 * 0.2.20
   * fix a regression that was introduced in 0.2.17.
   * update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.0.0-m4
