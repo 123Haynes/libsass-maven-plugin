@@ -49,7 +49,7 @@ interface Lookup {
     }
 
     private static String read(URL url) {
-      try (Scanner scanner = new Scanner(url.openStream(), StandardCharsets.UTF_8.name())) {
+      try (Scanner scanner = new Scanner(url.openStream(), StandardCharsets.UTF_8)) {
         return scanner.useDelimiter("\\A").next();
       } catch (IOException e) {
         throw new RuntimeException("Cannot read the url: " + url, e);
