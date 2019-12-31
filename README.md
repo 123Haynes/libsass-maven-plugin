@@ -152,7 +152,9 @@ Configuration Elements
        Enables classpath aware importer which make possible to <code>@import</code> files from classpath and WebJars.
        For classpath resources use <code>@import 'path/to/resource/in/classpath';</code>.
        For WebJar resources a shortcut can be used: <code>@import '{package}/{path}';</code> imports resource
-       <code>META-INF/resources/webjars/{package}/{version}/{path}</code>.
+       <code>META-INF/resources/webjars/{package}/{version}/{path}</code>.  
+       Warning:  
+       <code>Due to a limitation in jsass, this currently only works with scss files.</code>
       </td>
     </tr>
      <tr>
