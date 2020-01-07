@@ -2,7 +2,6 @@ package wrm.libsass;
 
 import java.net.URI;
 import java.util.Optional;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
