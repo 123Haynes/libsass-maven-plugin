@@ -1,5 +1,14 @@
 # Changelog
 
+* 0.2.22
+  * update dependency org.apache.maven:maven-core to v3.6.3
+  * update dependency org.apache.maven:maven-plugin-api to v3.6.3
+  * update maven docker tag to v3.6.3
+  * update dependency com.puppycrawl.tools:checkstyle to v8.28
+  * update dependency org.slf4j:slf4j-api to v1.7.30
+  * update dependency org.slf4j:slf4j-simple to v1.7.30
+  * update dependency org.apache.maven.plugins:maven-source-plugin to v3.2.1
+  * Document a limitation with the classpathAwareImporter
 * 0.2.21
   * lower the target java version to java 8 and add the corresponding ci jobs.
 * 0.2.20
