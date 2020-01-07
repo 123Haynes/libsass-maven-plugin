@@ -6,7 +6,6 @@ import static wrm.libsass.Lookups.findWebJarResource;
 
 import io.bit3.jsass.importer.Import;
 import io.bit3.jsass.importer.Importer;
-
 import java.net.URI;
 import java.util.Collection;
 import java.util.Collections;
