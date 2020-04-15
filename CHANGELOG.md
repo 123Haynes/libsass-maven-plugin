@@ -1,5 +1,11 @@
 # Changelog
 
+* 0.2.23
+  * update dependency org.junit.jupiter:junit-jupiter-engine to v5.6.2
+  * update dependency com.puppycrawl.tools:checkstyle to v8.31
+  * update dependency org.apache.maven.plugins:maven-checkstyle-plugin to v3.1.1
+  * update dependency org.webjars:webjars-locator-core to v0.45
+  * update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.2.0
 * 0.2.22
   * update dependency org.apache.maven:maven-core to v3.6.3
   * update dependency org.apache.maven:maven-plugin-api to v3.6.3
