@@ -65,8 +65,8 @@ Configuration Elements
       <td>inputPath</td>
       <td><code>src/main/sass</code></td>
       <td>
-        The directory from which the source <code>.scss</code> files will be read. This directory will be
-        traversed recursively, and all <code>.scss</code> files found in this directory or subdirectories
+        The directories from which the source <code>.scss</code> files will be read, ';'-separated. These directories will be
+        traversed recursively, and all <code>.scss</code> files found in these directories or subdirectories
         will be compiled.
       </td>
     </tr>

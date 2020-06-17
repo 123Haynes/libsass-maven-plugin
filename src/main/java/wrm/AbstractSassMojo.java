@@ -43,8 +43,9 @@ public abstract class AbstractSassMojo extends AbstractMojo {
    */
   protected File outputPath;
   /**
-   * The directory from which the source .scss files will be read. This directory will be traversed
-   * recursively, and all .scss files found in this directory or subdirectories will be compiled.
+   * The directories from which the source .scss files will be read, ';'-separated.
+   * These directories will be traversed recursively, and all .scss files found in
+   * these directories or subdirectories will be compiled.
    * The default value is <tt>src/main/sass</tt>
    *
    * @parameter default-value="src/main/sass"
@@ -167,33 +168,41 @@ public abstract class AbstractSassMojo extends AbstractMojo {
   }
 
   protected void compile() throws Exception {
-    final Path root = project.getBasedir().toPath().resolve(Paths.get(inputPath));
-    String fileExt = getFileExtension();
-    String globPattern = "glob:{**/,}*." + fileExt;
-    getLog().debug("Glob = " + globPattern);
 
-    final PathMatcher matcher = FileSystems.getDefault().getPathMatcher(globPattern);
     final AtomicInteger errorCount = new AtomicInteger(0);
     final AtomicInteger fileCount = new AtomicInteger(0);
-    Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
-      @Override
-      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if (matcher.matches(file) && !file.getFileName().toString().startsWith("_")) {
-          fileCount.incrementAndGet();
-          if (!processFile(root, file)) {
-            errorCount.incrementAndGet();
+
+    if (inputPath != null) {
+      for (String path : inputPath.split(";")) {
+
+        final Path root = project.getBasedir().toPath().resolve(Paths.get(path));
+        String fileExt = getFileExtension();
+        String globPattern = "glob:{**/,}*." + fileExt;
+        getLog().debug("Glob = " + globPattern);
+
+        final PathMatcher matcher = FileSystems.getDefault().getPathMatcher(globPattern);
+
+        Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            if (matcher.matches(file) && !file.getFileName().toString().startsWith("_")) {
+              fileCount.incrementAndGet();
+              if (!processFile(root, file)) {
+                errorCount.incrementAndGet();
+              }
+            }
+
+            return FileVisitResult.CONTINUE;
           }
-        }
 
-        return FileVisitResult.CONTINUE;
+          @Override
+          public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+            return FileVisitResult.CONTINUE;
+          }
+        });
       }
-
-      @Override
-      public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
-        return FileVisitResult.CONTINUE;
-      }
-    });
-
+    }
     getLog().info("Compiled " + fileCount + " files");
     if (errorCount.get() > 0) {
       if (failOnError) {
