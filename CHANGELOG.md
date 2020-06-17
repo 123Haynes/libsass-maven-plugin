@@ -1,5 +1,8 @@
 # Changelog
 
+* 0.2.24
+  * update dependency com.puppycrawl.tools:checkstyle to v8.33
+  * feature: allow multiple input directories separated by ;
 * 0.2.23
   * update dependency org.junit.jupiter:junit-jupiter-engine to v5.6.2
   * update dependency com.puppycrawl.tools:checkstyle to v8.31
