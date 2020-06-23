@@ -26,6 +26,12 @@ code_navigation:
   script:
     - /opt/lsifjava/bin/lsifjava -projectRoot ./ -out dump.lsif
     - ls -al
+  artifacts:
+    reports:
+      lsif: dump.lsif
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      allow_failure: true
 
 .build:
   stage: test
