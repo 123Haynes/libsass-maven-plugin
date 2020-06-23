@@ -20,6 +20,12 @@ include:
   - template: Secret-Detection.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
 
+code_navigation:
+  stage: test
+  image: haynes/lsifjava:latest
+  script:
+    - /opt/lsifjava/bin/lsifjava -projectRoot ./ -out dump.lsif
+    - ls -al
 
 .build:
   stage: test
