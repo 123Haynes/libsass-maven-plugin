@@ -14,6 +14,12 @@ cache:
   paths:
     - .m2/repository
 
+stages:
+  - build
+  - test
+  - visualize
+  - deploy
+
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: License-Management.gitlab-ci.yml
@@ -40,6 +46,8 @@ code_navigation:
     - 'cd target/site/jacoco/'
     - awk -F"," '{ instructions += $4 + $5; covered += $5 } END { print covered, "/", instructions, " instructions covered"; print 100*covered/instructions, "% covered" }' jacoco.csv
   artifacts:
+    paths:
+      - target/site/jacoco/jacoco.xml
     reports:
       junit:
         - $CI_PROJECT_DIR/target/surefire-reports/TEST-*.xml
@@ -80,3 +88,18 @@ deploy:release:
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
   only:
     - tags
+
+.codecoverage:
+  stage: visualize
+  image: haynes/jacoco2cobertura:1.0.0
+  script:
+    - 'python /opt/cover2cover.py target/site/jacoco/jacoco.xml src/main/java > target/site/coverage.xml'
+
+coverage:jdk11:
+  extends: .codecoverage
+  needs: ["test:jdk11"]
+  dependencies:
+    - test:jdk11
+  artifacts:
+    reports:
+      cobertura: target/site/coverage.xml
