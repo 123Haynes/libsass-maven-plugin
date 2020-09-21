@@ -97,5 +97,6 @@ deploy:release:
 
 coverage:jdk11:
   extends: .codecoverage
+  needs: ["test:jdk11"]
   dependencies:
     - test:jdk11
