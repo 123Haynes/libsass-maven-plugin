@@ -32,4 +32,8 @@ class WebJarTranslator {
 
     return fullPath == null ? Optional.empty() : Optional.of(URI.create(fullPath));
   }
+
+  public void test() {
+    System.out.println("test");
+  }
 }
