@@ -91,9 +91,10 @@ deploy:release:
 
 .codecoverage:
   stage: visualize
-  image: haynes/jacoco2cobertura:1.0.0
+  image: haynes/jacoco2cobertura:1.0.1
   script:
     - 'python /opt/cover2cover.py target/site/jacoco/jacoco.xml src/main/java > target/site/coverage.xml'
+    - 'python /opt/source2filename.py target/site/coverage.xml'
 
 coverage:jdk11:
   extends: .codecoverage
