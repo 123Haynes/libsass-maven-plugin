@@ -144,6 +144,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
 
   /**
    * The maven project.
+   *
    * @parameter property="project"
    * @required
    * @readonly
@@ -152,6 +153,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
 
   /**
    * The build context.
+   *
    * @component
    */
   protected BuildContext buildContext;
