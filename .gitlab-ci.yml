@@ -84,7 +84,7 @@ deploy:release:
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
-    - 'mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$CI_BUILD_REF_NAME'
+    - 'mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$CI_COMMIT_REF_NAME'
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
   only:
     - tags
