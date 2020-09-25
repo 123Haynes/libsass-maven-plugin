@@ -74,9 +74,8 @@ deploy:snapshot:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
-  only:
-    refs:
-      - master
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
 
 deploy:release:
   stage: deploy
@@ -86,8 +85,8 @@ deploy:release:
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
     - 'mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$CI_COMMIT_REF_NAME'
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
-  only:
-    - tags
+  rules:
+    - if: $CI_COMMIT_TAG
 
 .codecoverage:
   stage: visualize
