@@ -63,9 +63,9 @@ test:jdk11:
   image: maven:3.6.3-jdk-11
   
 # Build and Test using JDK13
-test:jdk13:
+test:jdk15:
   extends: .build
-  image: maven:3.6.3-jdk-13
+  image: maven:3.6.3-openjdk-15
 
 deploy:snapshot:
   stage: deploy
