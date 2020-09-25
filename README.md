@@ -4,6 +4,10 @@ Libsass Maven Plugin [![pipeline status](https://gitlab.com/haynes/libsass-maven
 Libsass Maven Plugin uses [libsass](http://github.com/hcatlin/libsass) to compile sass files.
 Uses [jsass](https://gitlab.com/jsass/jsass) to interface with C-library.
 
+## Compability
+This plugin only works with 64bit OS, because the upstream library [jsass](https://gitlab.com/jsass/jsass) removed 32bit support.  
+Please look here for a full compability matrix: https://github.com/bit3/jsass#compatibility-overview
+
 ## This project was forked from https://github.com/warmuuh/libsass-maven-plugin version 0.2.10-libsass_3.5.3
 
 Installation
