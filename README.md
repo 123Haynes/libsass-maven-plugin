@@ -84,8 +84,7 @@ Configuration Elements
       <td><code>nested</code></td>
       <td>
          Output style for the generated css code. One of <code>nested</code>, <code>expanded</code>,
-         <code>compact</code>, <code>compressed</code>. Note that as of libsass 3.1, <code>expanded</code>
-         and <code>compact</code> result in the same output as <code>nested</code>.
+         <code>compact</code>, <code>compressed</code>.
       </td>
     </tr>
     <tr>
