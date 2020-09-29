@@ -230,11 +230,6 @@ public abstract class AbstractSassMojo extends AbstractMojo {
             .warn("embedSourceContentsInSourceMap=true is ignored. Cause: generateSourceMap=false");
       }
     }
-    if (outputStyle != SassCompiler.OutputStyle.compressed
-        && outputStyle != SassCompiler.OutputStyle.nested) {
-      getLog().warn("outputStyle=" + outputStyle
-          + " is replaced by nested. Cause: libsass 3.1 only supports compressed and nested");
-    }
   }
 
   private void setCompileClasspath() {
