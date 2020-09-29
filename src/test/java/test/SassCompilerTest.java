@@ -73,7 +73,6 @@ public class SassCompilerTest {
 
   @Test
   public void testWithOutputStyleExpanded() throws Exception {
-    // Warning: As of Libsass 3.1, expanded is the same as nested
     compiler.setOutputStyle(OutputStyle.EXPANDED);
     compile("/test.scss");
 
@@ -98,7 +97,6 @@ public class SassCompilerTest {
 
   @Test
   public void testWithOutputStyleCompact() throws Exception {
-    // Warning: As of Libsass 3.1, compact is the same as nested
     compiler.setOutputStyle(OutputStyle.COMPACT);
     compile("/test.scss");
 

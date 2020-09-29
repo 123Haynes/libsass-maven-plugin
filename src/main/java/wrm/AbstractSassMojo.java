@@ -59,9 +59,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
   protected String includePath;
   /**
    * Output style for the generated css code. One of <tt>nested</tt>, <tt>expanded</tt>,
-   * <tt>compact</tt>, <tt>compressed</tt>. Note that as of libsass 3.1, <tt>expanded</tt>
-   * and <tt>compact</tt> are the same as <tt>nested</tt>. The default value is
-   * <tt>nested</tt>.
+   * <tt>compact</tt>, <tt>compressed</tt>.
    *
    * @parameter default-value="nested"
    */
