@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gitlab.haynes</groupId>
   <artifactId>libsass-maven-plugin</artifactId>
-  <version>0.2.25-SNAPSHOT</version>
+  <version>0.2.26-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
 
