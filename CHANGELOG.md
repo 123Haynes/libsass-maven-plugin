@@ -1,5 +1,16 @@
 # Changelog
 
+* 0.2.26
+  * remove outdated warning when using compact or compact expanded outputstyles
+  * update dependency com.puppycrawl.tools:checkstyle to v8.37
+  * update dependency io.bit3:jsass to v5.10.4
+* 0.2.25
+  * update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.0.0-m5
+  * update dependency org.webjars:webjars-locator-core to v0.46
+  * update dependency com.puppycrawl.tools:checkstyle to v8.36.1
+  * update dependency org.junit.jupiter:junit-jupiter-engine to v5.7.0
+  * update dependency org.jacoco:jacoco-maven-plugin to v0.8.6
+  * Test builds against JDK 15
 * 0.2.24
   * update dependency com.puppycrawl.tools:checkstyle to v8.33
   * feature: allow multiple input directories separated by ;
