@@ -42,7 +42,6 @@ public class WatchMojo extends AbstractSassMojo {
     try (WatchService watcher = FileSystems.getDefault().newWatchService()) {
       registerWatchDirectories(watcher);
 
-      getLog().info("Watching [" + inputPath + "]...");
       try {
         long lastModified = 0;
         for (; ; ) {

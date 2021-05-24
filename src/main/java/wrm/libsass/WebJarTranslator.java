@@ -18,6 +18,7 @@ class WebJarTranslator {
     String name = "";
     String fullPath = null;
 
+    //Test
     if (!nameAndPartialpathArrayList.isEmpty()) {
       name = nameAndPartialpathArrayList.get(0);
 
