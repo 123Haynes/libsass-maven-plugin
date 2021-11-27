@@ -22,7 +22,6 @@ stages:
 
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
-  - template: License-Management.gitlab-ci.yml
   - template: Secret-Detection.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
 
@@ -103,3 +102,11 @@ coverage:jdk11:
   artifacts:
     reports:
       cobertura: target/site/coverage.xml
+
+eslint:
+  image: registry.gitlab.com/haynes/prettier-java-docker/ci-prettier:prettier-2.5.0-prettierjava-1.6.0
+  script:
+    - prettier-formatter-gitlab 'prettier --check "**/*.java"'
+  artifacts:
+    reports:
+      codequality: gl-codequality.json
