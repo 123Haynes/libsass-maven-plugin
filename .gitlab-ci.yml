@@ -22,7 +22,6 @@ stages:
 
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
-  - template: License-Management.gitlab-ci.yml
   - template: Secret-Detection.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
 
