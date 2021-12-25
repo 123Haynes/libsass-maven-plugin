@@ -41,21 +41,21 @@ include:
 # Build and Test using JDK8
 test:jdk8:
   extends: .build
-  image: maven:3.6.3-jdk-8
+  image: maven:3.8.4-jdk-8
 
 # Build and Test using JDK11
 test:jdk11:
   extends: .build
-  image: maven:3.6.3-jdk-11
+  image: maven:3.8.4-jdk-11
   
-# Build and Test using JDK13
-test:jdk15:
+# Build and Test using JDK17
+test:jdk17:
   extends: .build
-  image: maven:3.6.3-openjdk-15
+  image: maven:3.8.4-openjdk-17
 
 deploy:snapshot:
   stage: deploy
-  image: maven:3.6.3-jdk-8
+  image: maven:3.8.4-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
@@ -65,7 +65,7 @@ deploy:snapshot:
 
 deploy:release:
   stage: deploy
-  image: maven:3.6.3-jdk-8
+  image: maven:3.8.4-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
@@ -78,8 +78,7 @@ deploy:release:
   stage: visualize
   image: registry.gitlab.com/haynes/jacoco2cobertura:1.0.7
   script:
-    - 'python /opt/cover2cover.py target/site/jacoco/jacoco.xml src/main/java > target/site/coverage.xml'
-    - 'python /opt/source2filename.py target/site/coverage.xml'
+    - python /opt/cover2cover.py target/site/jacoco/jacoco.xml $CI_PROJECT_DIR/src/main/java > target/site/coverage.xml
 
 coverage:jdk11:
   extends: .codecoverage
