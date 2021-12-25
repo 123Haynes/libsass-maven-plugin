@@ -1,4 +1,4 @@
-Libsass Maven Plugin [![pipeline status](https://gitlab.com/haynes/libsass-maven-plugin/badges/master/pipeline.svg)](https://gitlab.com/haynes/libsass-maven-plugin/commits/master) [![Maven Central](https://img.shields.io/maven-central/v/com.gitlab.haynes/libsass-maven-plugin.svg)](https://mvnrepository.com/artifact/com.gitlab.haynes/libsass-maven-plugin)
+Libsass Maven Plugin [![pipeline status](https://gitlab.com/haynes/libsass-maven-plugin/badges/main/pipeline.svg)](https://gitlab.com/haynes/libsass-maven-plugin/commits/main) [![Maven Central](https://img.shields.io/maven-central/v/com.gitlab.haynes/libsass-maven-plugin.svg)](https://mvnrepository.com/artifact/com.gitlab.haynes/libsass-maven-plugin)
 ==========
 
 Libsass Maven Plugin uses [libsass](http://github.com/hcatlin/libsass) to compile sass files.
