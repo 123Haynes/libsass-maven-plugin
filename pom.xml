@@ -59,6 +59,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.9.7</version>
+    </dependency>
+    <dependency>
       <groupId>io.bit3</groupId>
       <artifactId>jsass</artifactId>
       <version>5.10.4</version>
@@ -154,6 +159,36 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+        <version>1.14.0</version>
+        <configuration>
+          <complianceLevel>1.8</complianceLevel>
+          <source>1.8</source>
+          <target>1.8</target>
+          <showWeaveInfo>true</showWeaveInfo>
+          <verbose>true</verbose>
+          <Xlint>ignore</Xlint>
+          <encoding>UTF-8 </encoding>
+          <weaveDependencies>
+            <weaveDependency>
+              <groupId>io.bit3</groupId>
+              <artifactId>jsass</artifactId>
+            </weaveDependency>
+          </weaveDependencies>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <!-- use this goal to weave all your main classes -->
+              <goal>compile</goal>
+              <!-- use this goal to weave all your test classes -->
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
