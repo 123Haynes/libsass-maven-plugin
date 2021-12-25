@@ -33,7 +33,9 @@
       <layout>default</layout>
     </snapshotRepository>
   </distributionManagement>
-
+  <prerequisites>
+    <maven>3.8.4</maven>
+  </prerequisites>
 
   <licenses>
     <license>
