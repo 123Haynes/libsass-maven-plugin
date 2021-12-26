@@ -24,6 +24,8 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: Secret-Detection.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
+  - project: 'renovate-bot/renovate-runner'
+    file: '/templates/renovate-dind.gitlab-ci.yml'
 
 .build:
   stage: test
