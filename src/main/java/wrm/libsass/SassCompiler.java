@@ -8,6 +8,9 @@ import io.bit3.jsass.Output;
 import java.io.File;
 import java.net.URI;
 
+/**
+ * The Sass compiler.
+ */
 public class SassCompiler {
 
   private String includePaths;
@@ -116,6 +119,9 @@ public class SassCompiler {
     this.outputStyle = io.bit3.jsass.OutputStyle.values()[outputStyle.ordinal()];
   }
 
+  /**
+   * Enum that defines the output style of the generated css.
+   */
   public enum OutputStyle {
     nested, expanded, compact, compressed
   }
@@ -128,6 +134,9 @@ public class SassCompiler {
     this.enableClasspathAwareImporter = enableClasspathAwareImporter;
   }
 
+  /**
+   * Enum that defines which inputsyntax should be used.
+   */
   public static enum InputSyntax {
     sass, scss
   }

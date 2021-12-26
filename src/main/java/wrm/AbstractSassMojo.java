@@ -32,6 +32,9 @@ import org.apache.maven.project.MavenProject;
 import org.sonatype.plexus.build.incremental.BuildContext;
 import wrm.libsass.SassCompiler;
 
+/**
+ * Abstract class that provides some generic methods for sass compilation.
+ */
 public abstract class AbstractSassMojo extends AbstractMojo {
 
   /**

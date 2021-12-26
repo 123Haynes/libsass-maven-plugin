@@ -5,6 +5,9 @@ import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Testclass for the WebjarTranslator.
+ */
 public class WebJarTranslatorTest {
   @Test
   public void testTranslate() throws Exception {
