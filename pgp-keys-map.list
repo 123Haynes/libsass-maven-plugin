@@ -1,0 +1,95 @@
+org.junit.*                     = 0xFF6E2C001948C5F2F38B0CC385911F425EC61B51
+
+org.apache.commons              = \
+                                  0x2DB4F1EF0FA761ECC4EA935C86FDC7E2A11262CB, \
+                                  0x636DE9055C4C75C7BD9830771241BC872C5E4EC0, \
+                                  0xB6E73D84EA4FCC47166087253FAAD2CD5ECBB314, \
+                                  0xCD5464315F0B98C77E6E8ECD9DAADC1C9FCC82D0, \
+                                  0xCE8075A251547BEE249BC151A2115AE15F6B8B72
+
+org.slf4j:*:(,1.6.4]            = noSig
+org.slf4j                       = 0x475F3B8E59E6E63AA78067482C7B12F2A511E325
+
+org.webjars:susy:2.1.1 = 0x341C2AE47D5FF3A7EDFB5989E57A697A70CFE5F9
+
+org.sonatype.plexus = 0x2BCBDD0F23EA1CAFCC11D4860374CF2E8DD1BDFD
+
+com.fasterxml.*                 = \
+                                  0x2A21DE22697E264345A764832D1F2506C6ECEDF4, \
+                                  0x6214760097DC5CFAD0175AC2C9FBAA83A8753994, \
+                                  0x064F04959CD99ACCC4DFB54C9CD8549ACF9BD0CE, \
+                                  0x8A10792983023D5D14C93B488D7F1BEC1E2ECAE7
+
+org.sharegov:mjson = 0xCC18276FA308412C919849ABE924680AF7E854CF
+
+io.bit3:jsass = 0xC8F639A8BABEA6BB8314F82E2580622DDA625CBA
+
+commons-io                      = \
+                                  0x2DB4F1EF0FA761ECC4EA935C86FDC7E2A11262CB, \
+                                  0x6BDACA2C0493CCA133B372D09C4F7E9D98B1CC53, \
+                                  0xCD5464315F0B98C77E6E8ECD9DAADC1C9FCC82D0, \
+                                  0xD196A5E3E70732EEB2E5007F1861C322C56014B2
+
+org.opentest4j                  = 0xFF6E2C001948C5F2F38B0CC385911F425EC61B51
+
+org.apiguardian:apiguardian-api = 0xFF6E2C001948C5F2F38B0CC385911F425EC61B51
+
+org.codehaus.plexus:plexus-utils = 0xFA77DCFEF2EE6EB2DEBEDD2C012579464D01C06A
+
+org.aspectj:aspectjrt = 0x136D34A0583E164FAC36868D521A9C06820D5C1D
+
+org.webjars                     = 0xFA1703B1D287CAEA3A60F931E0130A3ED5A2079E
+
+io.github.classgraph:classgraph = 0x1F47744C9B6E14F2049C2857F1F111AF65925306
+
+org.jacoco                      = 0xA413F67D71BEEC23ADD0CE0ACB43338E060CF9FA
+
+org.apache.maven.*              = \
+                                  0x042B29E928995B9DB963C636C7CA19B7B620D787, \
+                                  0x0CDE80149711EB46DFF17AE421A24B3F8B0F594A, \
+                                  0x190D5A957FF22273E601F7A7C92C5FEC70161C62, \
+                                  0x32118CF76C9EC5D918E54967CA80D1F0EB6CA4BA, \
+                                  0x31FAE244A81D64507B47182E1B2718089CE964B8, \
+                                  0x341EE4BF9F5CFFFF954201660A3939A4C560DD8B, \
+                                  0x34D924503BAF25291978F7C54F9BDB78DB596386, \
+                                  0x429E6335123A642267EF0CDB8F0FABD30F353251, \
+                                  0x47063E8BA7A6450E4A52E7AE466CAED6E0747D50, \
+                                  0x503BFAAE645286D11EC18181F704B943ED330E1B, \
+                                  0x522CA055B326A636D833EF6A0551FD3684FCBBB7, \
+                                  0x6A814B1F869C2BBEAB7CB7271A2A1C94BDE89688, \
+                                  0x6C4982557FD21F69E64E08863B58205B9D7013A9, \
+                                  0x6BDACA2C0493CCA133B372D09C4F7E9D98B1CC53, \
+                                  0x6E13156C0EE653F0B984663AB95BBD3FA43C4492, \
+                                  0x7C9CFAF9C409737872FE044AF397D776F65C0178, \
+                                  0x82C9EC0E52C47A936A849E0113D979595E6D01E1, \
+                                  0x849FB4F1AF3D17CDE4DE5E710704ADDF1D821345, \
+                                  0x998AF0E2B935996F5CEBD56B9B1FDA9F3C062231, \
+                                  0x9FFED7A118D45A44E4A1E47130E6F80434A72A7F, \
+                                  0xAE9E53FC28FF2AB1012273D0BF1518E0160788A2, \
+                                  0xB02137D875D833D9B23392ECAE5A7FB608A0221C, \
+                                  0xB920D295BF0E61CB4CF0896C33CD6733AF5EC452, \
+                                  0xBA926F64CA647B6D853A38672E2010F8A7FF4A41, \
+                                  0xBBE7232D7991050B54C8EA0ADC08637CA615D22C, \
+                                  0xC345986F0FD384669C5919E6A5F094FD3961DF05, \
+                                  0xC739CE4075D9F0F0DED13A7D39BE51A1084C9113, \
+                                  0xC870735180244047DA600FDEC171A58398EEC284, \
+                                  0xCA491704D613780D2BEE00F2C6FC46EB51CF569C, \
+                                  0xD53C5C58A3E173D18AEDF6E993450DF2DF9A3FA3, \
+                                  0xF254B35617DC255D9344BCFA873A8E86B4372146, \
+                                  0xF4C53F3061834D885726D258AC2D56EAF0E309FF, \
+                                  0xFA77DCFEF2EE6EB2DEBEDD2C012579464D01C06A, \
+                                  0xFB11D4BB7B244678337AAD8BC7BF26D0BB617866, \
+                                  0x82F833963889D7ED06F1E4DC6525FD70CC303655
+
+org.codehaus.mojo:aspectj-maven-plugin = 0xF254B35617DC255D9344BCFA873A8E86B4372146
+
+org.simplify4u.*                = \
+                                  0x57EB3F12030A57BAA31CAAD5BE3E2A5CB80794EE, \
+                                  0x6636274B2E8BEA9D15A61143F8484389379ACEAC
+
+com.puppycrawl.tools            = 0x06D34ED6FF73DE368A772A781063FE98BCECB758
+
+org.cyclonedx:cyclonedx-maven-plugin = 0x5D283C23D9D9DC2D9C2130E6AADF2C18DCF95764
+
+
+
