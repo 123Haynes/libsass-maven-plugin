@@ -1,5 +1,15 @@
 # Changelog
 
+* 0.2.28
+  * add SBOMs in cyclonedx format
+  * update dependency com.puppycrawl.tools:checkstyle to v9.2.1
+  * add the new license scanning job
+  * verify the gpg keys of all dependencies
+* 0.2.27
+  * fix #3 (DEPRECATION WARNING of the jsass-void variable)
+  * update all dependencies to their latest versions (fixes 2 CVEs)
+  * update all maven plugins to their latest versions
+  * test against Java 17
 * 0.2.26
   * remove outdated warning when using compact or compact expanded outputstyles
   * update dependency com.puppycrawl.tools:checkstyle to v8.37
