@@ -92,3 +92,12 @@ coverage:jdk11:
   artifacts:
     reports:
       cobertura: target/site/coverage.xml
+
+code_navigation:
+  image: sourcegraph/lsif-java:0.7.4
+  allow_failure: true # recommended
+  script:
+    - lsif-java index
+  artifacts:
+    reports:
+      lsif: dump.lsif
