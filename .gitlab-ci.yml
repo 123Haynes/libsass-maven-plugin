@@ -94,7 +94,7 @@ coverage:jdk11:
       cobertura: target/site/coverage.xml
 
 code_navigation:
-  image: sourcegraph/lsif-java:0.7.4
+  image: sourcegraph/lsif-java:0.7.5
   allow_failure: true # recommended
   script:
     - lsif-java index
