@@ -8,6 +8,7 @@ variables:
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
   LM_JAVA_VERSION: 11
   SAST_JAVA_VERSION: 11
+  DS_MAJOR_VERSION: 2.34.0
 
 stages:
   - build
