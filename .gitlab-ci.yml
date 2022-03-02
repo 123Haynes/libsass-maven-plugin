@@ -24,6 +24,11 @@ include:
     file: '/templates/renovate-dind.gitlab-ci.yml'
 
 
+gemnasium-maven-dependency_scanning:
+  script:
+    - "/analyzer run"
+    - ls 
+    - ls target
 
 .build:
   stage: test
