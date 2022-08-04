@@ -46,12 +46,12 @@ include:
 # Build and Test using JDK8
 test:jdk8:
   extends: .build
-  image: maven:3.8.5-jdk-8
+  image: maven:3.8.6-jdk-8
 
 # Build and Test using JDK11
 test:jdk11:
   extends: .build
-  image: maven:3.8.5-jdk-11
+  image: maven:3.8.6-jdk-11
   
 # Build and Test using JDK17
 test:jdk17:
@@ -60,7 +60,7 @@ test:jdk17:
 
 deploy:snapshot:
   stage: deploy
-  image: maven:3.8.5-jdk-8
+  image: maven:3.8.6-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
@@ -70,7 +70,7 @@ deploy:snapshot:
 
 deploy:release:
   stage: deploy
-  image: maven:3.8.5-jdk-8
+  image: maven:3.8.6-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
