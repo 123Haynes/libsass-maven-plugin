@@ -92,7 +92,9 @@ coverage:jdk11:
     - test:jdk11
   artifacts:
     reports:
-      cobertura: target/site/coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: target/site/coverage.xml
 
 code_navigation:
   image: sourcegraph/lsif-java:0.7.8
