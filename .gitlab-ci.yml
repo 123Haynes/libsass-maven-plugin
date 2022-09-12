@@ -11,9 +11,11 @@ variables:
 
 stages:
   - build
+  - tests
   - test
   - visualize
   - deploy
+
 
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
@@ -22,6 +24,7 @@ include:
   - template: Security/License-Scanning.gitlab-ci.yml
   - project: 'renovate-bot/renovate-runner'
     file: '/templates/renovate-dind.gitlab-ci.yml'
+  - remote: 'https://api.r2devops.io/job/r/r2devops-bot/sls_scan/latest.yaml'
 
 
 
