@@ -22,7 +22,7 @@ com.fasterxml.*                 = \
 
 org.sharegov:mjson = 0xCC18276FA308412C919849ABE924680AF7E854CF
 
-io.bit3:jsass = 0xC8F639A8BABEA6BB8314F82E2580622DDA625CBA
+io.bit3:jsass = 0x05C2F4E6FA04DD42F4EE6B95310BA774E93B1CE0
 
 commons-io                      = \
                                   0x2DB4F1EF0FA761ECC4EA935C86FDC7E2A11262CB, \
