@@ -8,7 +8,8 @@ org.apache.commons              = \
                                   0xCE8075A251547BEE249BC151A2115AE15F6B8B72
 
 org.slf4j:*:(,1.6.4]            = noSig
-org.slf4j                       = 0x475F3B8E59E6E63AA78067482C7B12F2A511E325
+org.slf4j                       = 0x475F3B8E59E6E63AA78067482C7B12F2A511E325, \
+                                  0x60200AC4AE761F1614D6C46766D68DAA073BE985
 
 org.webjars:susy:2.1.1 = 0x341C2AE47D5FF3A7EDFB5989E57A697A70CFE5F9
 
