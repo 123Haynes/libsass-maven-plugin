@@ -100,7 +100,9 @@ code_navigation:
   image: haynes/lsif-java-microsoft:0.5.2
   allow_failure: true # recommended
   script:
-    - /lsif-java/cmd/index.sh -p $PWD -o line | egrep -v "(INFO|DEBUG|WARN)" > dump.lsif
+    - /lsif-java/cmd/index.sh -p $PWD -o line | egrep -v "(INFO|DEBUG|WARN|Warning)" > dump.lsif
   artifacts:
     reports:
       lsif: dump.lsif
+    paths:
+      - "dump.lsif"
