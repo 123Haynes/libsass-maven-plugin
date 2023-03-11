@@ -97,10 +97,10 @@ coverage:jdk11:
         path: target/site/coverage.xml
 
 code_navigation:
-  image: sourcegraph/lsif-java:0.7.8
+  image: haynes/lsif-java-microsoft:0.5.2
   allow_failure: true # recommended
   script:
-    - lsif-java index
+    - /lsif-java/cmd/index.sh -p $PWD -o line | egrep -v "(INFO|DEBUG|WARN)" > dump.lsif
   artifacts:
     reports:
       lsif: dump.lsif
