@@ -1,5 +1,28 @@
 # Changelog
 
+* 0.2.30
+  * updated all dependencies to the latest version
+  * added java 21 test job 
+* 0.2.29
+  * update dependency org.apache.maven:maven-plugin-api to v3.8.6
+  * update dependency org.slf4j:slf4j-api to v2
+  * update dependency org.slf4j:slf4j-simple to v2
+  * update dependency io.bit3:jsass to v5.10.5
+  * update dependency org.apache.maven:maven-core to v3.8.6
+  * update dependency org.cyclonedx:cyclonedx-maven-plugin to v2.7.2
+  * update dependency org.apache.commons:commons-text to v1.10.0
+  * update dependency org.junit.jupiter:junit-jupiter-engine to v5.9.1
+  * update dependency org.apache.maven.plugins:maven-checkstyle-plugin to v3.2.0
+  * update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.4.1
+  * update dependency org.webjars:webjars-locator-core to v0.52
+  * update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.0.0-m7
+  * update dependency org.apache.maven.plugins:maven-release-plugin to v3.0.0-m6
+  * update dependency maven to v3.8.6
+  * update dependency org.sonatype.plugins:nexus-staging-maven-plugin to v1.6.13
+  * update dependency org.jacoco:jacoco-maven-plugin to v0.8.8
+  * update dependency org.aspectj:aspectjrt to v1.9.9.1
+  * update dependency com.puppycrawl.tools:checkstyle to v9.3
+  * update dependency org.simplify4u.plugins:pgpverify-maven-plugin to v1.16.0
 * 0.2.28
   * add SBOMs in cyclonedx format
   * update dependency com.puppycrawl.tools:checkstyle to v9.2.1
