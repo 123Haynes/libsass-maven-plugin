@@ -73,7 +73,7 @@ deploy:snapshot:
 
 deploy:release:
   stage: deploy
-  image: maven:3.9.6-eclipse-temurin-8
+  image: maven:3.8.6-jdk-8
   script:
     - 'export GPG_TTY=$(tty)'
     - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
