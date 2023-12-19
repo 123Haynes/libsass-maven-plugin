@@ -1,5 +1,7 @@
 # Changelog
 
+* 0.2.31
+  * revert docker image used in deployment job because the new image does not include gpg
 * 0.2.30
   * updated all dependencies to the latest version
   * added java 21 test job 
