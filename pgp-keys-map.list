@@ -90,7 +90,9 @@ org.apache.maven.*              = \
                                   0x29BEA2A645F2D6CED7FB12E02B172E3E156466E8, \
                                   0x347C77169CDF57191103E81E4A0BCD23ADE37005
 
-org.codehaus.mojo:aspectj-maven-plugin = 0xF254B35617DC255D9344BCFA873A8E86B4372146
+org.codehaus.mojo:aspectj-maven-plugin = \
+                                  0xF254B35617DC255D9344BCFA873A8E86B4372146, \
+                                  0x32118CF76C9EC5D918E54967CA80D1F0EB6CA4BA
 
 org.simplify4u.*                = \
                                   0x57EB3F12030A57BAA31CAAD5BE3E2A5CB80794EE, \
