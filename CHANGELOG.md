@@ -1,5 +1,8 @@
 # Changelog
 
+* 0.3.0
+  * remove obsolete aspectj method overwrite. The change was merged in jsass 5.11.0
+  * update jsass to 5.11.0
 * 0.2.31
   * revert docker image used in deployment job because the new image does not include gpg
 * 0.2.30
