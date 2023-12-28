@@ -61,7 +61,7 @@
     <dependency>
       <groupId>io.bit3</groupId>
       <artifactId>jsass</artifactId>
-      <version>5.10.5</version>
+      <version>5.11.0</version>
       <exclusions>
           <exclusion>
               <artifactId>junit</artifactId>
