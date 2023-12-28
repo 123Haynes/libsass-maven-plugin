@@ -1,5 +1,7 @@
 # Changelog
 
+* 0.3.1
+  * fixed an error in the build jobs
 * 0.3.0
   * remove obsolete aspectj method overwrite. The change was merged in jsass 5.11.0
   * update jsass to 5.11.0

@@ -65,8 +65,6 @@ deploy:snapshot:
   stage: deploy
   image: maven:3.9.6-eclipse-temurin-8
   script:
-    - 'export GPG_TTY=$(tty)'
-    - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
@@ -75,8 +73,6 @@ deploy:release:
   stage: deploy
   image: maven:3.9.6-eclipse-temurin-8
   script:
-    - 'export GPG_TTY=$(tty)'
-    - '(echo $GPG_PASSPHRASE | gpg --batch --no-tty --yes --import <(echo "$GPG_PRIVATE_KEY")) >/dev/null'
     - 'mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$CI_COMMIT_REF_NAME'
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
   rules:
