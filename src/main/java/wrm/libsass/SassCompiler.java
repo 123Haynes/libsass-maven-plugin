@@ -143,9 +143,9 @@ public class SassCompiler {
     sass, scss
   }
 
-    /**
-   * Enum that defines which inputsyntax should be used.
-   */
+  /**
+  * Enum that defines which inputsyntax should be used.
+  */
   public static enum InputSyntax2 {
     sass, scss
   }
