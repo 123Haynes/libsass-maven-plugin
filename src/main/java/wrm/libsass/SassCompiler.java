@@ -35,7 +35,7 @@ public class SassCompiler {
   ) throws CompilationException {
 
     String inputOmitSpace = inputPathAbsolute.replaceAll("%20", " ");
-    String inputOmitSpace = inputPathAbsolute.replaceAll("%20", " ");
+    String inputOutputOmitSpace = inputPathAbsolute.replaceAll("%20", " ");
     String outputOmitSpace = outputPathRelativeToInput.replaceAll("%20", " ");
 
     URI inputFile = new File(inputOmitSpace).toURI();
