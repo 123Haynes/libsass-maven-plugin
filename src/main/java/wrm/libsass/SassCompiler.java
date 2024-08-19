@@ -35,6 +35,7 @@ public class SassCompiler {
   ) throws CompilationException {
 
     String inputOmitSpace = inputPathAbsolute.replaceAll("%20", " ");
+    String inputOmitSpace = inputPathAbsolute.replaceAll("%20", " ");
     String outputOmitSpace = outputPathRelativeToInput.replaceAll("%20", " ");
 
     URI inputFile = new File(inputOmitSpace).toURI();
@@ -59,6 +60,7 @@ public class SassCompiler {
     String allIncludePaths = new File(inputPathAbsolute).getParent();
     opt.getIncludePaths().add(new File(allIncludePaths));
 
+    
     opt.setIsIndentedSyntaxSrc(inputSyntax == sass);
     opt.setOutputStyle(outputStyle);
 
@@ -138,6 +140,13 @@ public class SassCompiler {
    * Enum that defines which inputsyntax should be used.
    */
   public static enum InputSyntax {
+    sass, scss
+  }
+
+    /**
+   * Enum that defines which inputsyntax should be used.
+   */
+  public static enum InputSyntax2 {
     sass, scss
   }
 }
