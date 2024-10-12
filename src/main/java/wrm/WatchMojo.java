@@ -24,6 +24,7 @@ import org.apache.maven.plugin.MojoFailureException;
  * Watch for changes in inputPath, then compile scss files to outputPath using includePaths.
  *
  * @goal watch
+ * @threadSafe
  */
 public class WatchMojo extends AbstractSassMojo {
 
