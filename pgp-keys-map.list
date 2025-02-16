@@ -105,5 +105,6 @@ com.puppycrawl.tools            = 0x06D34ED6FF73DE368A772A781063FE98BCECB758
 org.cyclonedx:cyclonedx-maven-plugin = 0x5D283C23D9D9DC2D9C2130E6AADF2C18DCF95764, \
                                 0xFA77DCFEF2EE6EB2DEBEDD2C012579464D01C06A
 
-org.sonatype.plugins:nexus-staging-maven-plugin = 0x2BCBDD0F23EA1CAFCC11D4860374CF2E8DD1BDFD
+org.sonatype.plugins:nexus-staging-maven-plugin = 0x2BCBDD0F23EA1CAFCC11D4860374CF2E8DD1BDFD, \
+                                                  0x6C0D8AA121AE5808F43805A6C26BAB2B209A8FF4
 
