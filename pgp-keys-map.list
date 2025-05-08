@@ -108,3 +108,4 @@ org.cyclonedx:cyclonedx-maven-plugin = 0x5D283C23D9D9DC2D9C2130E6AADF2C18DCF9576
 org.sonatype.plugins:nexus-staging-maven-plugin = 0x2BCBDD0F23EA1CAFCC11D4860374CF2E8DD1BDFD, \
                                                   0x6C0D8AA121AE5808F43805A6C26BAB2B209A8FF4
 
+org.sonatype.central:central-publishing-maven-plugin:0.7.0 = 0x27C7B9756A9C691EE87696FB5C9BD9F4EAAD7054
