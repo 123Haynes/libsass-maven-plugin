@@ -67,7 +67,7 @@ deploy:snapshot:
   script:
     - 'mvn $MAVEN_CLI_OPTS clean deploy -s ci_mavensettings.xml -Prelease -DskipTests'
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == "main"'
 
 deploy:release:
   stage: deploy
