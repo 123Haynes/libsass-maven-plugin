@@ -1,5 +1,21 @@
 # Changelog
 
+* 0.3.4
+  * switch to new maven central deployment
+  * update dependency org.jacoco:jacoco-maven-plugin to v0.8.13
+  * update dependency org.simplify4u.plugins:pgpverify-maven-plugin to v1.19.1
+  * update dependency org.junit.jupiter:junit-jupiter-engine to v5.12.2
+  * update dependency org.apache.commons:commons-text to v1.13.1
+  * update dependency org.apache.commons:commons-lang3 to v3.17.0
+  * update dependency commons-io:commons-io to v2.19.0
+  * update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.3
+  * update dependency org.apache.maven.plugins:maven-release-plugin to v3.1.1
+  * update slf4j monorepo to v2.0.17
+* 0.3.3
+  * fix: add pgp key to allowed list
+* 0.3.2
+  * updated alle dependencies to their latest versions
+  * Marked mojos as thread safe. Huge thanks to @VsevolodGolovanov 😃  !223
 * 0.3.1
   * fixed an error in the build jobs
 * 0.3.0
