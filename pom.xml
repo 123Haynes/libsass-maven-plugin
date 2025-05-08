@@ -17,22 +17,6 @@
     <tag>HEAD</tag>
   </scm>
 
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <name>oss-sonatype-release</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-      <uniqueVersion>false</uniqueVersion>
-      <layout>default</layout>
-    </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <name>oss-sonatype-snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <uniqueVersion>false</uniqueVersion>
-      <layout>default</layout>
-    </snapshotRepository>
-  </distributionManagement>
   <prerequisites>
     <maven>3.8.4</maven>
   </prerequisites>
@@ -313,14 +297,13 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.7.0</version>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.7.0</version>
             <extensions>true</extensions>
             <configuration>
-              <nexusUrl>https://oss.sonatype.org</nexusUrl>
-              <serverId>ossrh</serverId>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+             <publishingServerId>central</publishingServerId>
+             <autoPublish>true</autoPublish>
             </configuration>
           </plugin>
           <plugin>

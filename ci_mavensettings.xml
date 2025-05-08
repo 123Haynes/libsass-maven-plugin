@@ -11,7 +11,7 @@
   </profiles>
   <servers>
     <server>
-      <id>ossrh</id>
+      <id>central</id>
       <username>${env.OSSRH_USER}</username>
       <password>${env.OSSRH_PWD}</password>
     </server>
